@@ -13,17 +13,29 @@ public class Main
 		int a = 24;
 		int b = 7;
 		
+	    double h = a;
+		
 		int c = a+b;
 		int d = a-b;
 		int e = a*b;
-		double f = (double)a/b;
+		int i = a/b; // we are interseted in only integer value
+		double f = (double)a/b; // want exact division value 
 		int g = a%b;
+		char ch = 'a';
+		String s = "abcdef";
 		
-		System.out.println(c);
-		System.out.println(d);
-		System.out.println(e);
+// 		System.out.println(ch);
+// 		System.out.println(s);
+		
+// 		System.out.println(c);
+// 		System.out.println(d);
+// 		System.out.println(e);
 		System.out.println(f);
-		System.out.println(g);
+		System.out.println(i);
+// 		System.out.println(g);
+// 		System.out.println(h);
+		
+// 		System.out.println(a + " " + b + " " + c + " " + d + " " + e + " " + f + " " + g);
 		
 	}
 }
