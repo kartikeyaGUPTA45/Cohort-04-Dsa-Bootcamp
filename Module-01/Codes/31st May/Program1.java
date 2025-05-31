@@ -12,6 +12,7 @@ public class Main
 	public static void main(String[] args) {
 		int a = 24;
 		int b = 7;
+		double k = 2.333433;
 		
 	    double h = a;
 		
@@ -23,6 +24,10 @@ public class Main
 		int g = a%b;
 		char ch = 'a';
 		String s = "abcdef";
+		double l = (double)(a/b);
+		double m = (double)(a/b);
+		double n = a/b;
+		float o = (float)a/b;
 		
 // 		System.out.println(ch);
 // 		System.out.println(s);
@@ -30,12 +35,12 @@ public class Main
 // 		System.out.println(c);
 // 		System.out.println(d);
 // 		System.out.println(e);
-		System.out.println(f);
-		System.out.println(i);
-// 		System.out.println(g);
-// 		System.out.println(h);
+		System.out.println("Double output: " + f);
+// 		System.out.println(l);
+// 		System.out.println(m);
+		System.out.println("Float Output: " + o);
 		
-// 		System.out.println(a + " " + b + " " + c + " " + d + " " + e + " " + f + " " + g);
+// 		System.out.println(a + "\n" + b + "\n" + c + "\n" + d + "\n" + e + "\n" + f + "\n" + g);
 		
 	}
 }
