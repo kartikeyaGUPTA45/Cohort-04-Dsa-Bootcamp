@@ -21,7 +21,7 @@ public class Main
 		int e = a*b;
 		int i = a/b; // we are interseted in only integer value
 		double f = (double)a/b; // want exact division value 
-		int g = a%b;
+		int g = a%b; // Getting remainder
 		char ch = 'a';
 		String s = "abcdef";
 		double l = (double)(a/b);
