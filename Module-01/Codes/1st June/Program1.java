@@ -20,8 +20,12 @@ public class Main
 // 	    System.out.println("Sum of a+b is:" + c);
 	    
 	   // String str = scn.next();
-	    String str2 = scn.nextLine();
-	    System.out.println("String is: " + str2);
+	   // String str2 = scn.nextLine().charAt(0);
+	   // System.out.println("String is: " + str2);
+	   
+	   char ch = scn.next().charAt(0);
+	   // char ch = scn.nextLine().charAt(0);
+	    System.out.println("Character is: " + ch);
 	    
 	    
 	}
