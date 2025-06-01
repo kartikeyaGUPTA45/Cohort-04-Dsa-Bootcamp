@@ -23,9 +23,16 @@ public class Main
 	   // String str2 = scn.nextLine().charAt(0);
 	   // System.out.println("String is: " + str2);
 	   
-	   char ch = scn.next().charAt(0);
-	   // char ch = scn.nextLine().charAt(0);
-	    System.out.println("Character is: " + ch);
+	   //char ch = scn.next().charAt(0);
+	   //// char ch = scn.nextLine().charAt(0);
+	   // System.out.println("Character is: " + ch);
+	   
+	   //double d = scn.nextDouble();
+	   //System.out.println("Value of d is: " + d);
+	   
+	   
+	   boolean e =scn.nextBoolean();
+	   System.out.println("Value of e is: " + e);
 	    
 	    
 	}
