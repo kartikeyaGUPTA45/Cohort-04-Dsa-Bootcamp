@@ -1,0 +1,22 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scn = new Scanner(System.in);
+		System.out.println("Enter first number:");
+		int a = scn.nextInt();
+		System.out.println("Enter second number:");
+		int b = scn.nextInt();
+		
+		int c = a+b;
+		
+	    System.out.println("Sum of a+b is:" + c);
+	}
+}
