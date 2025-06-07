@@ -19,6 +19,7 @@ public class Main
 		    case 'O':
 		    case 'U':
 		        System.out.println("Vowel");
+		        System.out.println("Hi");
 		        break;
 		  default:
 		        if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) 
