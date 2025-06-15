@@ -42,8 +42,10 @@ public class Main
         
         // System.out.println(str.substring(6)); // ghijkl
         // System.out.println(str.substring(11));  // l
-        System.out.println(str.substring(13)); // 12 in the length of the string => valid part => empty
+        // System.out.println(str.substring(13)); // 12 in the length of the string => valid part => empty
         // System.out.println(str.substring(15)); // error -> out of range 
+        
+        System.out.println(str.substring(-1)); // Error
         
 		
 	}
