@@ -1,4 +1,4 @@
-Link: https://www.geeksforgeeks.org/problems/factorial5739/1#
+// Link: https://www.geeksforgeeks.org/problems/factorial5739/1#
 
 Code:
 class Solution {
