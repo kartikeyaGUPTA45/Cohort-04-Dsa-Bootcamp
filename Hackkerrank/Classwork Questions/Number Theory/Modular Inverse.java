@@ -11,7 +11,7 @@ public class Solution {
     public static int inverseModulo(int n, int m) {
         int g = gcd(n,m);
         
-        if (g != 1 && m <= 1) {
+        if (g != 1 || m <= 1) {
             return -1;
         }
         
