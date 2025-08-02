@@ -24,8 +24,8 @@ class Solution {
         return cnt;
     }
 
-    private int factorial(int n, int mod) {
-        int ans = 1;
+    private long factorial(int n, long mod) {
+        long ans = 1;
         for(int i=2;i<=n;i++) {
             ans = (ans*i)%mod;
         }
@@ -36,11 +36,11 @@ class Solution {
     public int numPrimeArrangements(int n) {
         int cntPrime = primeSieve(n);
         int cntNonPrime = n - cntPrime;
-        int mod = 1000000007;
+        long mod = 1000000007;
 
-        int x = factorial(cntPrime, mod);
-        int y = factorial(cntNonPrime, mod);
+        long x = factorial(cntPrime, mod);
+        long y = factorial(cntNonPrime, mod);
 
-        return (x*y)%mod;
+        return (int)((x*y)%mod);
     }
 }
