@@ -1,6 +1,6 @@
 class Solution {
     private int primeSieve(int n) {
-        int arr[] = new int[n+1];
+        boolean arr[] = new boolean[n+1];
         Arrays.fill(arr,true);
 
         arr[0] = false;
