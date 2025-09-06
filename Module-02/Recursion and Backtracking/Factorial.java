@@ -1,5 +1,5 @@
 // Problem Link: https://www.geeksforgeeks.org/problems/factorial5739/1
-
+// 1 way
 class Solution {
     // Function to calculate factorial of a number.
     int factorial(int n) {
@@ -16,4 +16,19 @@ class Solution {
     }
 }
 
+
+// 2 way
+
+class Solution {
+    // Function to calculate factorial of a number.
+    int factorial(int n) {
+        // code here
+        
+        if (n == 0) {
+            return 1;
+        }
+        
+        return factorial(n-1)*n;
+    }
+}
 
