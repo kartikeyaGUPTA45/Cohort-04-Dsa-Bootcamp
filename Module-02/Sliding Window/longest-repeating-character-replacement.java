@@ -13,7 +13,6 @@ public class Solution {
             maxFreq = Math.max(maxFreq, map.get(ch));
 
             while((i-j+1)-maxFreq > k) {
-                System.out.println(i + " " + j);
                 char ch1 = s.charAt(j);
                 map.put(ch1, map.get(ch1)-1);
                 j++;
