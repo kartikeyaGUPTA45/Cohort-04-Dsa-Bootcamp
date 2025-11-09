@@ -33,11 +33,24 @@ class Solution {
         return dp[n];
 
     }
+    private int minSqr_tab(int n, int dp[]) {
+        dp[0] = 0;
+
+        for(int i=1;i<=n;i++) {
+            int minAns = Integer.MAX_VALUE;
+            for(int j=1;j*j<=i;j++) {
+                minAns = Math.min(minAns, dp[i-j*j]+1);
+            }
+            dp[i] = minAns;
+        }
+
+        return dp[n];
+    }
 
     public int numSquares(int n) {
         int dp[] = new int[n+1];
         Arrays.fill(dp,-1);
-        return minSqr_memo(n, dp);
+        return minSqr_tab(n, dp);
     }
 }
 
