@@ -1,5 +1,21 @@
 class Solution {
 
+    private int up_spo(int m, int n) {
+        int dp[] = new int [n];
+
+        for(int col = 0;col<n;col++) {
+            dp[col] = 1;
+        }
+
+        for(int row = m-2;row >= 0;row--) {
+            for(int col = n-2;col>=0;col--) {
+                dp[col] = dp[col] + dp[col+1];
+            }
+        }
+
+        return dp[0];
+    }
+
     private int up_tab(int m, int n, int dp[][]) {
         dp[m-1][n-1] = 1;
 
@@ -64,6 +80,6 @@ class Solution {
             Arrays.fill(x, -1);
         }
 
-        return up_tab(m, n, dp);
+        return up_spo(m, n);
     }
 }
