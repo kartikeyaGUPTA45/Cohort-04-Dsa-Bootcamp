@@ -19,6 +19,25 @@ class Solution {
         }
     }
 
+    private int lcs_memo2(int i, int j, String t1, String t2, int dp[][]) {
+        if (i < 0 || j < 0) {
+            return 0;
+        }
+
+        if (dp[i][j] != -1) {
+            return dp[i][j];
+        }
+
+        if (t1.charAt(i) == t2.charAt(j)) {
+            return dp[i][j] = lcs_memo2(i-1, j-1, t1, t2, dp) + 1;
+        } else {
+            int ans1 = lcs_memo2(i-1, j, t1, t2, dp);
+            int ans2 = lcs_memo2(i, j-1, t1, t2, dp);
+
+            return dp[i][j] = Math.max(ans1, ans2);
+        }
+    }
+
 
     private int lcs_rec1(int i, int j, String t1, String t2) {
 
@@ -58,12 +77,15 @@ class Solution {
         int n = text1.length();
         int m = text2.length();
 
-        int dp[][] = new int[n+1][m+1];
+        // int dp[][] = new int[n+1][m+1]; // lcs_memo
+        int dp[][] = new int[n][m]; // lcs_memo2
 
         for(int a[] : dp) {
             Arrays.fill(a, -1);
         }
 
-        return lcs_memo(0,0,text1, text2,dp);
+        return lcs_memo2(n-1,m-1,text1, text2,dp);
     }
 }
+
+// (0,n-1) (0,m-1) => dp[n][m]
