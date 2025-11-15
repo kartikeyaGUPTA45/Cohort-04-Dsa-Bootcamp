@@ -1,5 +1,22 @@
 class Solution {
 
+    private int lcs_tab(String t1, String t2, int dp[][]) {
+        int m = t1.length();
+        int n = t2.length();
+
+        for(int i=m-1;i>=0;i--) {
+            for(int j=n-1;j>=0;j--) {
+                if (t1.charAt(i) == t2.charAt(j)) {
+                    dp[i][j] = dp[i+1][j+1] + 1;
+                } else {
+                    dp[i][j] = Math.max(dp[i+1][j], dp[i][j+1]);
+                }
+            }
+        }
+
+        return dp[0][0];
+    }
+
     private int lcs_memo(int i, int j, String t1, String t2, int dp[][]) {
         if (i == t1.length() || j == t2.length()) {
             return dp[i][j] = 0;
@@ -38,7 +55,6 @@ class Solution {
         }
     }
 
-
     private int lcs_rec1(int i, int j, String t1, String t2) {
 
         if (i == t1.length() || j == t2.length()) {
@@ -74,18 +90,16 @@ class Solution {
     public int longestCommonSubsequence(String text1, String text2) {
         // return lcs_rec2(text1.length()-1,text2.length()-1,text1,text2);
 
-        int n = text1.length();
-        int m = text2.length();
+        int m = text1.length();
+        int n = text2.length();
 
-        // int dp[][] = new int[n+1][m+1]; // lcs_memo
-        int dp[][] = new int[n][m]; // lcs_memo2
+        int dp[][] = new int[m+1][n+1]; // lcs_memo
+        // int dp[][] = new int[n][m]; // lcs_memo2
 
-        for(int a[] : dp) {
-            Arrays.fill(a, -1);
-        }
+        // for(int a[] : dp) {
+        //     Arrays.fill(a, -1);
+        // }
 
-        return lcs_memo2(n-1,m-1,text1, text2,dp);
+        return lcs_tab(text1,text2,dp);
     }
 }
-
-// (0,n-1) (0,m-1) => dp[n][m]
