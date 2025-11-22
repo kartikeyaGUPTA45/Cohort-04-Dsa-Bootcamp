@@ -103,6 +103,25 @@ class Solution {
         return curr[0];
     }
 
+    private int lis_algo(int nums[]) {
+        int n = nums.length;
+        int dp[] = new int[n];
+
+        Arrays.fill(dp, 1);
+        int ans = 1;
+
+        for(int idx = 1; idx < n;idx++) {
+            for(int prev = 0;prev<idx;prev++) {
+                if (nums[idx] > nums[prev]) {
+                    dp[idx] = Math.max(dp[idx], dp[prev]+1);
+                }
+            }
+            ans = Math.max(ans, dp[idx]);
+        }
+
+        return ans;
+    }
+
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
         // int dp[][] = new int[n+1][n+1]; // lis_memo
@@ -113,6 +132,6 @@ class Solution {
 
         // return lis_rec(nums, 0, -1);
         // return lis_memo2(nums, 0, -1, dp);
-        return lis_spo(nums);
+        return lis_algo(nums);
     }
 }
