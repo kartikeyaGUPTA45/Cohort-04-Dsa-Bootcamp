@@ -81,6 +81,28 @@ class Solution {
 
     }
 
+    private int lis_spo(int nums[]) {
+        int n = nums.length;
+        int curr[] = new int[n+1];
+        int next[] = new int [n+1];
+
+        for(int idx = n-1;idx>=0;idx--) {
+            for(int prev = idx-1;prev>=-1;prev--) {
+                int take = 0;
+                if (prev == -1 || nums[idx] > nums[prev]) {
+                    take = next[idx+1] + 1;
+                }
+
+                int notTake = next[prev+1];
+                curr[prev+1] = Math.max(take, notTake);
+            }
+
+            next = curr.clone();
+        }
+
+        return curr[0];
+    }
+
     public int lengthOfLIS(int[] nums) {
         int n = nums.length;
         // int dp[][] = new int[n+1][n+1]; // lis_memo
@@ -91,6 +113,6 @@ class Solution {
 
         // return lis_rec(nums, 0, -1);
         // return lis_memo2(nums, 0, -1, dp);
-        return lis_tab(nums);
+        return lis_spo(nums);
     }
 }
