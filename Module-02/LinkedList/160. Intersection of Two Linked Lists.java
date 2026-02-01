@@ -23,8 +23,11 @@ public class Solution {
         return count;
     }
 
-    private void moveTempNode(ListNode t, int diff) {
-        
+    private ListNode moveTempNode(ListNode t, int diff) {
+        for(int i=1;i<=diff;i++) {
+                t = t.next;
+        }
+        return t;
     }
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
@@ -41,13 +44,9 @@ public class Solution {
         ListNode t2 = headB;
 
         if (l1 > l2) {
-            for(int i=1;i<=diff;i++) {
-                t1 = t1.next;
-            }
+            t1 = moveTempNode(t1, diff);
         } else {
-            for(int i=1;i<=diff;i++) {
-                t2 = t2.next;
-            }
+            t2 = moveTempNode(t2, diff);
         }
 
         while(t1 != null) {
